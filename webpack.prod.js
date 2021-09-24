@@ -5,6 +5,10 @@ const HtmlWebPackPlugin = require("html-webpack-plugin")
 module.exports = {
     entry: './src/client/index.js',
     mode: 'production',
+    // added to fix "clean-webpack-plugin: options.output.path not defined. Plugin disabled...""
+    output: {
+        path: path.resolve(__dirname, "dist"),
+    }, 
     module: {
         rules: [
             {
