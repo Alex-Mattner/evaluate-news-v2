@@ -1,6 +1,7 @@
 var path = require('path')
 const express = require('express')
-const mockAPIResponse = require('./mockAPI.js')
+const bodyParser = require('body-parser');
+//const mockAPIResponse = require('./mockAPI.js')
 
 const app = express()
 
@@ -22,3 +23,24 @@ app.listen(8080, function () {
 app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
 })
+  
+
+
+
+const formdata = new FormData();
+formdata.append("key", "30c6dda9499377485d59ad4eec48ff34");
+formdata.append("txt", "YOUR TEXT HERE");
+
+const requestOptions = {
+  method: 'POST',
+  body: formdata,
+  redirect: 'follow'
+};
+
+const response = fetch("https://api.meaningcloud.com/lang-4.0/identification", requestOptions)
+  .then(response => ({
+    status: response.status, 
+    body: response.json()
+  }))
+  .then({status, body} => console.log(status, body))
+  .catch(error => console.log('error', error));
