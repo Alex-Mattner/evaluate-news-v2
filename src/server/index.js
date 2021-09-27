@@ -42,7 +42,7 @@ app.post('/getTranslation', async (req, res) => {
     res.send(response)
 })
 
-const getTranslationFromApi = async (txt, key) => {
+const getTranslationFromApi = async (txt) => {
   
   const formdata = new FormData();
   
@@ -51,6 +51,7 @@ const getTranslationFromApi = async (txt, key) => {
     const url = 'https://api.meaningcloud.com/lang-4.0/identification'
     try {
         const res = await axios.post(url, formdata, { headers: formdata.getHeaders()} )
+        console.log(res.data)
         return res.data
     } catch(err) {
         return err
