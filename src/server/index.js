@@ -1,9 +1,22 @@
+const dotenv = require('dotenv');
+const result = dotenv.config()
+
+  if (result.error) {
+    throw result.error
+  }
+  console.log(result.parsed)
+
+
+//Global Variables
+const key = process.env.API_KEY;
+console.log(key)
+
+
 var path = require('path')
 const express = require('express')
 var cors = require('cors')
-
 const axios = require('axios')
-const FormData = require('form-data');
+const FormData = require('form-data')
 
 
 const app = express()
@@ -29,9 +42,11 @@ app.post('/getTranslation', async (req, res) => {
     res.send(response)
 })
 
-const getTranslationFromApi = async (txt) => {
-    const formdata = new FormData();
-    formdata.append("key", "30c6dda9499377485d59ad4eec48ff34");
+const getTranslationFromApi = async (txt, key) => {
+  
+  const formdata = new FormData();
+  
+    formdata.append("key", key);
     formdata.append("txt", txt);
     const url = 'https://api.meaningcloud.com/lang-4.0/identification'
     try {
@@ -46,3 +61,5 @@ const getTranslationFromApi = async (txt) => {
 app.listen(8081, function () {
     console.log('Example app listening on port 8081!')
 })
+
+
