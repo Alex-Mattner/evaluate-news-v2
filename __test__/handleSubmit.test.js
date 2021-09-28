@@ -3,7 +3,7 @@
 import {handleSubmit} from '../src/client/js/formHandler';
 
 
-test('Testing function handleSubmit from formHandler.js', done => {
+test('Testing function handleSubmit from formHandler.js', () => {
     expect(handleSubmit).toBeDefined();
 });
 

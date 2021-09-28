@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-const form = document.getElementById('CustomSubmit')
-form.addEventListener('submit', handleSubmit)
+const form = document.getElementById('CustomSubmit');
+window.load = function () {form.addEventListener('submit', handleSubmit)}
 
 function handleSubmit(event) {
     console.log('handleSubmit')
