@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 const form = document.getElementById('CustomSubmit');
-// wrapped in window.onload = function () {...}  because did not load on time for Jest
-window.onload = function() {form.addEventListener('submit', handleSubmit)}
+// wrapped in window.load = function () {...}  because did not load on time for Jest
+window.load = function () {form.addEventListener('submit', handleSubmit)}
 
 function handleSubmit(event) {
     console.log('handleSubmit')
@@ -35,8 +35,6 @@ const writeResponse = (res) => {
     })
 }
 
-
 export { handleSubmit }
 export {writeResponse}
-
 
