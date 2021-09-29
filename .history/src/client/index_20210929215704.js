@@ -13,3 +13,9 @@ import './styles/header.scss';
 import './styles/resets.scss';
 
 
+//Check service workers 
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js');
+    });
+}

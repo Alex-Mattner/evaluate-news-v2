@@ -25,22 +25,22 @@ app.use(express.json())
 
 console.log(__dirname)
 
-  app.all('/', function(req, res, next) {
+ app.all('/', function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   next()
-}); 
+});
 
 app.get('/', function (req, res) {
     res.send('api')
-});
+})
 
 app.post('/getTranslation', async (req, res) => {
     const txt = req.body.txt
     const response = await getTranslationFromApi(txt)
     console.log(response)
     res.send(response)
-});
+})
 
 const getTranslationFromApi = async (txt) => {
   
@@ -56,11 +56,11 @@ const getTranslationFromApi = async (txt) => {
     } catch(err) {
         return err
     }
-};
+}
 
 // designates what port the app will listen to for incoming requests
 app.listen(8081, function () {
     console.log('Example app listening on port 8081!')
-});
+})
 
 
