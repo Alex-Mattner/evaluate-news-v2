@@ -1,7 +1,13 @@
 import axios from 'axios'
 
+<<<<<<< Updated upstream
 const form = document.getElementById('CustomSubmit')
 form.addEventListener('submit', handleSubmit)
+=======
+const form = document.getElementById('CustomSubmit');
+// wrapped in window.onload = function () {...}  because did not load on time for Jest
+window.onload = function() {form.addEventListener('submit', handleSubmit)}
+>>>>>>> Stashed changes
 
 function handleSubmit(event) {
     console.log('handleSubmit')
@@ -35,4 +41,9 @@ const writeResponse = (res) => {
 }
 
 export { handleSubmit }
+<<<<<<< Updated upstream
+=======
+export { writeResponse }
+
+>>>>>>> Stashed changes
 
