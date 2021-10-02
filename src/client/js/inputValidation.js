@@ -1,4 +1,28 @@
-const fieldInput = document.getElementById('#TextInput');
+/*Validation Input*/
+const submitBtn = document.getElementById('submit-btn')
+submitBtn.addEventListener('click', inputValidation)
+
+function inputValidation(e) {
+    e.preventDefault()
+    const inputField = document.getElementById('input-text')
+    
+    if (!inputField.value) {
+        alert('Please enter your text here')
+    } else {
+        console.log('Filled text in input field: ok!')
+    }
+}
+
+export { inputValidation }
+
+
+
+
+
+
+
+
+/* const fieldInput = document.getElementById('#TextInput');
 console.log(fieldInput);
 
 document.getElementById('submitt-btn').addEventListener('click', inputValidation)
@@ -10,13 +34,7 @@ function inputValidation(fieldInput) {
     } else {
         alert('please only fill in text')
     }
-}
-
-
-
-export { inputValidation }
-
-
+} */
 
 
 /* 
