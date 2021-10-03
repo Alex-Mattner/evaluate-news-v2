@@ -1,10 +1,6 @@
-import { checkForName } from './js/nameChecker'
+//import { inputValidation } from './js/inputValidation'
 import { handleSubmit } from './js/formHandler'
 
-console.log(checkForName);
-
-/* alert("I EXIST")
-console.log("CHANGE!!"); */
 
 import './styles/base.scss';
 import './styles/footer.scss';
