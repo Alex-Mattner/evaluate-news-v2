@@ -1,9 +1,10 @@
 /*Validation if input exists or not*/
-
 function inputValidation(event) {
     
     event.preventDefault()
     
+    console.log(event)
+
     let inputText = event.target[0].value  
         //console.log(event.target[0].value)
      
@@ -27,3 +28,5 @@ function inputValidation(event) {
         }   
     
 } 
+
+export {inputValidation} 

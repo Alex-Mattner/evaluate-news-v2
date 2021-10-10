@@ -1,5 +1,7 @@
 # News-evaluation-Project 
 
+# Create .env based on .env.sample
+
 # How to run webpack dev-server from termial:
 npm run build-dev
 
